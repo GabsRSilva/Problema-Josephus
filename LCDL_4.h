@@ -1,14 +1,14 @@
 /* Header Programa Problema Josephus
 * Arquivo: LCDL_4.h
-* Autores: Breno GÛes do Amaral, Gabrielle Ramos da Silva, 
-		   Jolie Caldarone, Victor Barbosa Bulhıes
+* Autores: Breno G√≥es do Amaral, Gabrielle Ramos da Silva, 
+		   Jolie Caldarone, Victor Barbosa Bulh√µes
 * Data:    03/06/19  17:00
-* DescriÁ„o: Arquivo header com as funÁıes de criaÁ„o da lista circular duplamente ligada
-			 e da permtaÁ„o do Josephus
+* Descri√ß√£o: Arquivo header com as fun√ß√µes de cria√ß√£o da lista circular duplamente ligada
+			 e da permta√ß√£o do Josephus
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include "Booleano"
+#include "Booleano.h"
 
 
 typedef struct Celula{
@@ -22,15 +22,15 @@ typedef Celula * Lista;
 //interface
 Lista criarListaVazia(); 			//cria uma lista vazia
 bool verificarVazia(Lista); 		//devolve TRUE se a lista for vazia
-void mostrarLista(Lista);			//mostra os elementos da lista em sentido hor·rio
+void mostrarLista(Lista);			//mostra os elementos da lista em sentido hor√°rio
 Lista inserir(Lista, int;			//acrescenta item no inicio da lista
 Lista inserirFimLista(Lista, int); //acrescenta item no fim da lista
 Lista remover(Lista, Celula *);		//remove celula referenciada
 Lista esvaziar(Lista);				//remove todos os itens da lista
 
-void permutacaoJosephus(Lista, int, int);  //mostra na tela a permutaÁ„o de Josephus
+void permutacaoJosephus(Lista, int, int);  //mostra na tela a permuta√ß√£o de Josephus
 
-//implementaÁ„o
+//implementa√ß√£o
 Lista criarListaVazia(){
 	
 	return L;
@@ -66,7 +66,7 @@ Lista esvaziar(Lista L){
 	return L;
 }
 
-void permutacaoJosephus(Lista L, int n, int m){  //n È o numero de pessoas no circulo e m È o passo da morte
+void permutacaoJosephus(Lista L, int n, int m){  //n √© o numero de pessoas no circulo e m √© o passo da morte
 	
 	
 }
