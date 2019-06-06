@@ -47,8 +47,19 @@ bool verificarVazia(Lista L){
 }
 
 void mostrarLista(Lista L){
+    Lista aux = L;
+    if (L != NULL){
+        while(aux != L->anterior){
 
+            printf("%d ", aux->item);
+            aux = aux->seguinte;
+        }
+        printf("%d", L->anterior->item);
 
+    }
+    else{
+        printf("Lista Vazia");
+    }
 }
 
 Lista inserir(Lista L, int n){
