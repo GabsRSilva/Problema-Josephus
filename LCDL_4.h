@@ -54,7 +54,7 @@ void mostrarLista(Lista L){
             printf("%d ", aux->item);
             aux = aux->seguinte;
         }
-        printf("%d", L->anterior->item);
+        printf("%d\n", L->anterior->item);
 
     }
     else{
@@ -118,10 +118,25 @@ Lista inserirFimLista(Lista L, int n){
 
 Lista remover(Lista L, Celula * rem){
 
+    Celula * celulaSeguinte = rem->seguinte;
+    Celula * celulaAnterior = rem->anterior;
+    celulaSeguinte->anterior = celulaAnterior;
+    celulaAnterior->seguinte = celulaSeguinte;
+    free(rem);
+
 	return L;
 }
 
 Lista esvaziar(Lista L){
+	Celula * Aux;
+
+	Aux = L->anterior;
+	while(L != Aux){
+		L = L->seguinte;
+		free(L->anterior);
+	}
+	free(Aux);
+	L = NULL;
 
 	return L;
 }
