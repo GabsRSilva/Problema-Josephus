@@ -2,7 +2,7 @@
 * Arquivo: LCDL_4.h
 * Autores: Breno Góes do Amaral, Gabrielle Ramos da Silva,
 		   Jolie Caldarone, Victor Barbosa Bulhões
-* Data:    03/06/19  17:00
+* Data:    06/06/19  00:53
 * Descrição: Arquivo header com as funções de criação da lista circular duplamente ligada
 			 e da permtação do Josephus
 */
@@ -76,6 +76,7 @@ Lista inserir(Lista L, int n){
         novaCelula->item = n;
         novaCelula->seguinte = L;
         novaCelula->anterior = L->anterior;
+        L->anterior->seguinte = novaCelula;
         L->anterior = novaCelula;
         L = novaCelula;
 
@@ -141,7 +142,25 @@ Lista esvaziar(Lista L){
 	return L;
 }
 
-void permutacaoJosephus(Lista L, int n, int m){  //n é o numero de pessoas no circulo e m é o passo da morte
+void permutacaoJosephus(Lista L, int n, int m){
+//n é o numero de pessoas no circulo e m é o passo da morte
+	Celula * perm;
+	int tam = n, contador = -1, k = 1;
+	int morto;
 
+	perm = L;
+	do{
+		contador= contador + m;
+		while(k <= contador){
+			perm = perm->seguinte;
+			k++;
+		}
+		morto = perm->item;
+		printf("\n %d ", morto);
+		L = remover(L, perm);
+		tam --;
+
+	}while(tam>1);
 
 }
+
