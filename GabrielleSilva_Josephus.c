@@ -1,31 +1,35 @@
 /* Programa Problema Josephus
 * Arquivo: GabrielleSilva_Josephus.c
-* Autores: Breno Góes do Amaral, Gabrielle Ramos da Silva, 
-		   Jolie Caldarone, Victor Barbosa Bulhões
-* Data:    03/06/19  17:00
-* Descrição: Arquivo source com função principal e função Lista construtora para
-             construção de uma lista com n números acessando somente a interface.
+* Autores: Breno GÃ³es do Amaral, Gabrielle Ramos da Silva,
+		   Jolie Caldarone, Victor Barbosa BulhÃµes
+* Data:    05/06/19  00:53
+* DescriÃ§Ã£o: Arquivo source com funÃ§Ã£o principal e funÃ§Ã£o Lista construtora para
+             construÃ§Ã£o de uma lista com n nÃºmeros acessando somente a interface.
 */
 
-#include <stdio.h>
 #include "LCDL_4.h"
 
 //interface
-//void permutacaoJosephus(Lista, int, int);  //mostra na tela a permutação de Josephus
-Lista construtoraN(int);				   //constroi uma lista com n números
+Lista construtoraN(int);				   //constroi uma lista com n nÃºmeros
 
 //principal
 void main(){
-	
+	Lista A;
+	int pessoas = 10, morte = 3;
+
+	A = construtoraN(10);
+	mostrarLista(A);
+	permutacaoJosephus(A, pessoas, morte);
 }
 
-//implementação
+//implementaÃ§Ã£o
 Lista construtoraN(int n){
-	
-}
+	int i;
+	Lista L;
+	L = criarListaVazia();
 
-/*
-void permutacaoJosephus(Lista L, int n, int m){  //n é o numero de pessoas no circulo e m é o passo da morte
-	
-	
-}*/
+	for(i = 0; i < n; i++){
+        L = inserir(L, i+1);
+	}
+	return L;
+}
